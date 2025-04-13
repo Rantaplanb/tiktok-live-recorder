@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM python:3.10-slim
 
 # Install system dependencies including ffmpeg
 RUN apt-get update && apt-get install -y \
@@ -8,16 +8,18 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
+RUN mkdir -p /recordings
+
 COPY . /app
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Create volume mount points for output videos and configuration
-VOLUME ["/app/output", "/app/config"]
+# VOLUME ["/app/output", "/app/config"]
 
 # Set the entrypoint to the Python interpreter
 ENTRYPOINT ["python3"]
 
 # Default command to run the application
-CMD ["main.py", "-room_id", "7492759544498817814", "-mode", "automatic", "-output", "/app/output"]
+CMD ["main.py", "-room_id", "7492759544498817814", "-mode", "automatic", "-output", "/recordings"]
