@@ -1,0 +1,12 @@
+certifi==2025.1.31
+charset-normalizer==3.4.1
+distro==1.9.0
+ffmpeg-python==0.2.0
+future==1.0.0
+idna==3.10
+pyaes==1.6.1
+Pyrogram==2.0.106
+PySocks==1.7.1
+requests==2.32.3
+TgCrypto==1.2.5
+urllib3==2.4.0
