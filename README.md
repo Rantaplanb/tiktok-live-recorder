@@ -130,3 +130,9 @@ python3 main.py -room_id 7492759544498817814 -mode automatic -output /home/user/
 Na valw k auto to channel: 
 https://www.tiktok.com/@arxigosvstiktok?_t=ZN-8vUrCnDwDMk&_r=1
 7492759544498817814
+
+
+In case the container dies, the files may be corrupted. Fix them with: 
+```
+ffmpeg -i corrupted.mp4 -vcodec libx264 -crf 22 repaired.mp4
+```
